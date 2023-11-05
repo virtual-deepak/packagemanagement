@@ -70,6 +70,9 @@ jobs:
         needs: build-calculator-package
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
+        permissions:
+          packages: write
+          contents: read
         steps:
           - name: Download artifact
             uses: actions/download-artifact@v3
