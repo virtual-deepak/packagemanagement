@@ -2,7 +2,7 @@ namespace CalculatorEngine;
 
 public class MortgageCalculation : IMortgageCalculations
 {
-    // Returns the maximum mortgage
+    // Returns the maximum mortgage.
     public double MortgageMaximum(double yearIncome, double homeValue)
     {
         var maximum = 4.2 * yearIncome;
