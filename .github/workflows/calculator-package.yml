@@ -83,9 +83,9 @@ jobs:
             with:
                 dotnet-version: 7.x
           - name: Add Package Source
-            run: dotnet nuget add source https://nuget.pkg.github.com/virtual-deepak/index.json -n github -u virtual-deepak -p ${{secrets.NUGETAPIKEY}} --store-password-in-clear-text
+            run: dotnet nuget add source --username virtual-deepak -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/virtual-deepak/index.json"
           - name: Publish the package
-            run: dotnet nuget push ./*.nupkg --source github --api-key ${{secrets.NUGETAPIKEY}} 
+            run: dotnet nuget push ./*.nupkg --source github --api-key ${{secrets.GITHUB_TOKEN}}
      
           
 
