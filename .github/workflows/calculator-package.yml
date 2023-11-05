@@ -81,8 +81,6 @@ jobs:
                 dotnet-version: 7.x
           - name: Add Package Source
             run: dotnet nuget add source https://nuget.pkg.github.com/virtualdeepak/index.json -n github -u virtualdeepak -p ${{secrets.NUGETAPIKEY}} --store-password-in-clear-text
-          - name: List Directory Contents
-            run: ls -R /home/runner/work/
           - name: Publish the package
             run: dotnet nuget push ./*.nupkg --source github --api-key ${{secrets.NUGETAPIKEY}} 
      
